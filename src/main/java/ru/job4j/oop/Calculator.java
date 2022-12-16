@@ -38,5 +38,4 @@ public class Calculator {
         System.out.println(multi);
         System.out.println(sumAll);
     }
-
 }
