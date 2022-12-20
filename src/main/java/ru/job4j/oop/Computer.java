@@ -35,7 +35,6 @@ public class Computer {
         System.out.println("Модель CPU: " + cpu);
     }
 
-
     public static void main(String[] args) {
         Computer second = new Computer(true, 500, "Intel Core I7-10700K");
         second.printInfo();
