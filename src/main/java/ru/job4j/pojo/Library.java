@@ -25,8 +25,9 @@ public class Library {
         System.out.println();
         System.out.println("Output only: ");
         for (Book book : books) {
-            if (book.equals(books[0]))
+            if (book.equals(books[0])) {
                 System.out.println(book.getName() + " - " + book.getPages() + " страниц");
+            }
         }
     }
 }
