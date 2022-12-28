@@ -19,10 +19,6 @@ public class Item {
         this.id = id;
     }
 
-    public LocalDateTime getCreated() {
-        return this.created;
-    }
-
     public int getId() {
         return id;
     }
@@ -37,5 +33,9 @@ public class Item {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public LocalDateTime getCreated() {
+        return this.created;
     }
 }
