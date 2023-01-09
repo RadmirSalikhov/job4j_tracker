@@ -20,6 +20,4 @@ public class CarService {
         Status status = Status.valueOf(accepted);
         System.out.println(status);
     }
-
-
 }
