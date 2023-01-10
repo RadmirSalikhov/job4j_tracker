@@ -4,10 +4,11 @@ public class Broken {
 
     private String name;
     private int sizeOfEmpty = 10;
+    private String surname;
+    public static final String NEW_VALUE = "";
 
-    public String surName;
-
-    public static final String NEWVALUE = "";
+    public Broken() {
+    }
 
     public void echo() {
     }
@@ -19,8 +20,5 @@ public class Broken {
     }
 
     public void method(int a, int b, int c, int d, int e, int f, int g) {
-    }
-
-    public Broken() {
     }
 }
