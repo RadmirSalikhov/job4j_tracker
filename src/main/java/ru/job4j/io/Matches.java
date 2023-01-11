@@ -13,10 +13,12 @@ public class Matches {
             String player = turn ? "Первый игрок" : "Второй игрок";
             System.out.println(player + " введите число от 1 до 3:");
             int matches = Integer.parseInt(input.nextLine());
-            turn = !turn;
             if (matches > 0 && matches < 4) {
                 System.out.println(count - matches);
                 count -= matches;
+                turn = !turn;
+            } else {
+                System.out.println("Некорректное значение!");
             }
         }
         if (!turn) {
@@ -24,5 +26,6 @@ public class Matches {
         } else {
             System.out.println("Выиграл второй игрок");
         }
+
     }
 }
