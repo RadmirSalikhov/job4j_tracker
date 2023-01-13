@@ -7,14 +7,14 @@ public class Bus implements Transport {
     }
 
     @Override
-    public int passengers() {
+    public void passengers() {
         System.out.println("Вместимость 20 пассажиров");
-        return 20;
     }
 
     @Override
-    public int refuel(int price) {
-        System.out.println("Заправить 60литров, цена: " + price);
-        return 0;
+    public int refuel(int quantity, int price) {
+        int temp = quantity * price;
+        System.out.println("Литров: " + quantity + "; Цена: " + price + "; Сумма: " + temp);
+        return temp;
     }
 }
