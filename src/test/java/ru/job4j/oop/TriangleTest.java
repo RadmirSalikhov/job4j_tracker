@@ -1,6 +1,8 @@
 package ru.job4j.oop;
 
 import org.junit.jupiter.api.Test;
+import ru.job4j.encapsulation.oop.Point;
+import ru.job4j.encapsulation.oop.Triangle;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.offset;
