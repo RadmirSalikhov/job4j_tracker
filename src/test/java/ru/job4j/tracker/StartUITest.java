@@ -38,11 +38,10 @@ class StartUITest {
         Item item = new Item("new item");
         tracker.add(item);
         String[] answers = {
-                String.valueOf(item.getId()),
-                "new item"
+                String.valueOf(item.getId())
         };
         StartUI.deteleteItem(new StubInput(answers), tracker);
-        boolean deteleItemted = tracker.delete(item.getId());
-        assertThatNullPointerException();
+        Item deteleted = tracker.findById(item.getId());
+        assertThat(deteleted).isNull();
     }
 }
