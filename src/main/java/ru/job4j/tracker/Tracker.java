@@ -5,8 +5,10 @@ import java.util.List;
 
 public class Tracker {
     private List<Item> items = new ArrayList<>();
+    private int ids = 1;
 
     public Item add(Item item) {
+        item.setId(ids++);
         items.add(item);
         return item;
     }
@@ -17,9 +19,9 @@ public class Tracker {
 
     public List<Item> findByName(String key) {
         List<Item> rsl = new ArrayList<>();
-        for (int index = 0; index < items.size(); index++) {
-            if (key.equals(items.get(index).getName())) {
-                rsl.add(items.get(index));
+        for (Item item : items) {
+            if (key.equals(item.getName())) {
+                rsl.add(item);
             }
         }
         return rsl;
