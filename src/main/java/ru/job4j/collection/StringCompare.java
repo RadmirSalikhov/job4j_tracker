@@ -12,10 +12,7 @@ public class StringCompare implements Comparator<String> {
             if (result != 0) {
                 break;
             }
-            if (left.length() != right.length()) {
-                result = Integer.compare(left.length(), right.length());
-            }
         }
-        return result;
+        return Integer.compare(left.length(), right.length());
     }
 }
