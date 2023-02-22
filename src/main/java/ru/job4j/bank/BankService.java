@@ -36,8 +36,8 @@ public class BankService {
     /**
      * Метод должен добавить новый счет к пользователю
      *
-     * @param passport
-     * @param account
+     * @param passport паспорт клиента
+     * @param account счет, который будет добавлен пользователю
      */
     public void addAccount(String passport, Account account) {
         User user = findByPassport(passport);
@@ -52,8 +52,8 @@ public class BankService {
     /**
      * Метот ищет пользователя по номеру паспорта
      *
-     * @param passport
-     * @return
+     * @param passport паспорт клиента
+     * @return возвращает найденного пользователя или null если пользователь не был найден
      */
     public User findByPassport(String passport) {
         for (User user : users.keySet()) {
@@ -67,9 +67,9 @@ public class BankService {
     /**
      * Метод ищет счет пользователя по реквизитам
      *
-     * @param passport  паспорт
+     * @param passport  паспорт клиента
      * @param requisite реквизиты счета
-     * @return
+     * @return возвращает найденного пользователя или null если пользователь не был найден
      */
     public Account findByRequisite(String passport, String requisite) {
         User user = findByPassport(passport);
@@ -87,12 +87,12 @@ public class BankService {
     /**
      * Метод предназначен для перечисления денег с одного счёта на другой счёт
      *
-     * @param srcPassport
-     * @param srcRequisite
-     * @param destPassport
-     * @param destRequisite
-     * @param amount
-     * @return Если счёт не найден или не хватает денег на счёте srcAccount (с которого переводят), то метод должен вернуть false
+     * @param srcPassport паспорт клиента
+     * @param srcRequisite реквизиты счёта пользователя с которого осуществляется перевод
+     * @param destPassport паспорт клиента которому осуществляется перевод
+     * @param destRequisite реквизиты счёта пользователя на который осуществляется перевод
+     * @param amount сумма перевода
+     * @return в случае успешного перевода возвращает true, в противном случае false
      */
     public boolean transferMoney(String srcPassport, String srcRequisite,
                                  String destPassport, String destRequisite, double amount) {
@@ -107,6 +107,11 @@ public class BankService {
         return rsl;
     }
 
+    /**
+     * Метод возвращает список аккаунтов пользователя
+     * @param user пользователь для которого осуществляется возврат списка имеющихся аккаунтов
+     * @return возвращает список аккаунтов пользователя
+     */
     public List<Account> getAccounts(User user) {
         return users.get(user);
     }
