@@ -28,6 +28,11 @@ public class StreamUsage {
                 new Task("Task #2", 100),
                 new Task("Bug #3", 100)
         );
+        tasks.stream()
+                .filter(task -> task.name.contains("Bug"))
+                .map(task -> task.name)
+                .forEach(System.out::println);
+        System.out.println("-------------------");
         List<Task> bugs = tasks.stream().filter(
                 task -> task.name.contains("Bug")
         ).collect(Collectors.toList());
