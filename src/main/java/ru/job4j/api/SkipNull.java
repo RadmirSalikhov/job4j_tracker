@@ -1,12 +1,15 @@
 package ru.job4j.api;
 
+import java.util.*;
 import java.util.stream.Stream;
 
 public class SkipNull {
     public static void main(String[] args) {
-        Stream.of(1, null, 2, null, 3)
-                .flatMap(Stream::ofNullable)
-                .map(v -> "Результат: " + v)
-                .forEach(System.out::println);
+        List.of(5, 1, 2).forEach(System.out::print);
+        System.out.println("----");
+        Set.of(5, 1, 2).forEach(System.out::print);
+        System.out.println("----");
+        Map.of("first", 1, "second", 2)
+                .forEach((v, k) -> System.out.println(v + " " + k));
     }
 }
